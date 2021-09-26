@@ -64,7 +64,7 @@ function preload() {
         images[i].src = imgs[i];
     }
 }
-preload()
+//preload()
 console.log(images);
 photoContainer.src=imgs[current];
 photoContainer.style.objectFit="cover";
@@ -85,16 +85,20 @@ document.addEventListener('keydown', async el => {
         await delay(700);
         current=(current+1)%imgs.length;
         console.log(current);
-        
-        photoContainer.src=imgs[current];
-        photoContainer.style.objectFit="cover";
-        photoContainer.style.objectPosition="center top";
-        photoContainer.style.opacity="100%";
-        fullscreen.style.opacity=1;
+        var image=new Image();
+        image.src=imgs[current];
+        image.onload=function() {
+            console.log("loaded");
+            photoContainer.src=image.src;
+            photoContainer.style.objectFit="cover";
+            photoContainer.style.objectPosition="center top";
+            photoContainer.style.opacity="100%";
+            fullscreen.style.opacity=1;
+        }
         if(document.querySelector(".fullscreenWrapper").style.height == "100vh"){
             document.querySelector(".fWPhoto img").style.opacity=0;
             await delay(700);
-            document.querySelector(".fWPhoto img").src= await imgs[current];
+            document.querySelector(".fWPhoto img").src= await image.src;
             document.querySelector(".fWPhoto img").style.opacity=1;
         }
         slieCounter.innerText=(current+1)+"/"+imgs.length;
@@ -105,15 +109,20 @@ document.addEventListener('keydown', async el => {
         await delay(700);
         current=(current+imgs.length-1)%imgs.length;
         console.log(current);
-        photoContainer.src=imgs[current];
-        photoContainer.style.objectFit="cover";
-        photoContainer.style.objectPosition="center top"
-        photoContainer.style.opacity="100%";
-        fullscreen.style.opacity=1;
+        var image=new Image();
+        image.src=imgs[current];
+        image.onload=function()  {
+            console.log("loaded");
+            photoContainer.src=image.src;
+            photoContainer.style.objectFit="cover";
+            photoContainer.style.objectPosition="center top";
+            photoContainer.style.opacity="100%";
+            fullscreen.style.opacity=1;
+        }
         if(document.querySelector(".fullscreenWrapper").style.height == "100vh"){
             document.querySelector(".fWPhoto img").style.opacity=0;
             await delay(700);
-            document.querySelector(".fWPhoto img").src= await imgs[current];
+            document.querySelector(".fWPhoto img").src= await image.src;
             document.querySelector(".fWPhoto img").style.opacity=1;
         }
         slieCounter.innerText=(current+1)+"/"+imgs.length;
@@ -139,11 +148,17 @@ right.addEventListener("click", async() => {
     await delay(700);
     current=(current+1)%imgs.length;
     console.log(current);
-    photoContainer.src=imgs[current];
-    photoContainer.style.objectFit="cover";
-    photoContainer.style.objectPosition="center top"
-    photoContainer.style.opacity="100%";
-    fullscreen.style.opacity=1;
+    var image=new Image();
+    image.src=imgs[current];
+    image.onload=function() {
+        console.log("loaded");
+        photoContainer.src=image.src;
+        photoContainer.style.objectFit="cover";
+        photoContainer.style.objectPosition="center top";
+        photoContainer.style.opacity="100%";
+        fullscreen.style.opacity=1;
+    }
+    
     slieCounter.innerText=(current+1)+"/"+imgs.length;
 })
 
@@ -153,11 +168,17 @@ left.addEventListener("click", async() => {
     await delay(700);
     current=(current+imgs.length-1)%imgs.length;
     console.log(current);
-    photoContainer.src=imgs[current];
-    photoContainer.style.objectFit="cover";
-    photoContainer.style.objectPosition="center top"
-    photoContainer.style.opacity="100%";
-    fullscreen.style.opacity=1;
+    var image=new Image();
+    image.src=imgs[current];
+    image.onload=function() {
+        console.log("loaded");
+        photoContainer.src=image.src;
+        photoContainer.style.objectFit="cover";
+        photoContainer.style.objectPosition="center top";
+        photoContainer.style.opacity="100%";
+        fullscreen.style.opacity=1;
+    }
+    
     slieCounter.innerText=(current+1)+"/"+imgs.length;
 })
 
