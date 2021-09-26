@@ -66,7 +66,7 @@ function preload() {
 }
 preload()
 console.log(images);
-photoContainer.src=imgs[current];
+photoContainer.src=images[current].src;
 photoContainer.style.objectFit="cover";
 photoContainer.style.objectPosition="center"
 /*photoContainer.style.background="url("+imgs[current]+")";
@@ -76,17 +76,17 @@ photoContainer.style.backgroundPositionY="20%";*/
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
-slieCounter.innerText=(current+1)+"/"+imgs.length;
+slieCounter.innerText=(current+1)+"/"+images.length;
 
 document.addEventListener('keydown', async el => {
     if(el.code==="ArrowRight"){
         photoContainer.style.opacity="0%";
         fullscreen.style.opacity=0;
         await delay(700);
-        current=(current+1)%imgs.length;
+        current=(current+1)%images.length;
         console.log(current);
         
-        photoContainer.src=imgs[current];
+        photoContainer.src=images[current].src;
         photoContainer.style.objectFit="cover";
         photoContainer.style.objectPosition="center top";
         photoContainer.style.opacity="100%";
@@ -94,18 +94,18 @@ document.addEventListener('keydown', async el => {
         if(document.querySelector(".fullscreenWrapper").style.height == "100vh"){
             document.querySelector(".fWPhoto img").style.opacity=0;
             await delay(700);
-            document.querySelector(".fWPhoto img").src= await imgs[current];
+            document.querySelector(".fWPhoto img").src= await images[current].src;
             document.querySelector(".fWPhoto img").style.opacity=1;
         }
-        slieCounter.innerText=(current+1)+"/"+imgs.length;
+        slieCounter.innerText=(current+1)+"/"+images.length;
     }
     if(el.code==="ArrowLeft"){
         photoContainer.style.opacity="0%";
         fullscreen.style.opacity=0;
         await delay(700);
-        current=(current+imgs.length-1)%imgs.length;
+        current=(current+imgs.length-1)%images.length;
         console.log(current);
-        photoContainer.src=imgs[current];
+        photoContainer.src=images[current].src;
         photoContainer.style.objectFit="cover";
         photoContainer.style.objectPosition="center top"
         photoContainer.style.opacity="100%";
@@ -113,10 +113,10 @@ document.addEventListener('keydown', async el => {
         if(document.querySelector(".fullscreenWrapper").style.height == "100vh"){
             document.querySelector(".fWPhoto img").style.opacity=0;
             await delay(700);
-            document.querySelector(".fWPhoto img").src= await imgs[current];
+            document.querySelector(".fWPhoto img").src= await images[current].src;
             document.querySelector(".fWPhoto img").style.opacity=1;
         }
-        slieCounter.innerText=(current+1)+"/"+imgs.length;
+        slieCounter.innerText=(current+1)+"/"+images.length;
     }
 
     if(el.code==="Escape"){
@@ -137,28 +137,28 @@ right.addEventListener("click", async() => {
     photoContainer.style.opacity="0%";
     fullscreen.style.opacity=0;
     await delay(700);
-    current=(current+1)%imgs.length;
+    current=(current+1)%images.length;
     console.log(current);
-    photoContainer.src=imgs[current];
+    photoContainer.src=images[current].src;
     photoContainer.style.objectFit="cover";
     photoContainer.style.objectPosition="center top"
     photoContainer.style.opacity="100%";
     fullscreen.style.opacity=1;
-    slieCounter.innerText=(current+1)+"/"+imgs.length;
+    slieCounter.innerText=(current+1)+"/"+images.length;
 })
 
 left.addEventListener("click", async() => {
     photoContainer.style.opacity="0%";
     fullscreen.style.opacity=0;
     await delay(700);
-    current=(current+imgs.length-1)%imgs.length;
+    current=(current+imgs.length-1)%images.length;
     console.log(current);
-    photoContainer.src=imgs[current];
+    photoContainer.src=images[current].src;
     photoContainer.style.objectFit="cover";
     photoContainer.style.objectPosition="center top"
     photoContainer.style.opacity="100%";
     fullscreen.style.opacity=1;
-    slieCounter.innerText=(current+1)+"/"+imgs.length;
+    slieCounter.innerText=(current+1)+"/"+images.length;
 })
 
 document.querySelector(".fullscreen").addEventListener("click", async() => {
@@ -168,7 +168,7 @@ document.querySelector(".fullscreen").addEventListener("click", async() => {
     document.querySelector(".close").style.display="inline";
     document.querySelector(".close").style.opacity="1";
     await delay(600)
-    document.querySelector(".fWPhoto img").src= await imgs[current];
+    document.querySelector(".fWPhoto img").src= await images[current].src;
     document.querySelector(".fWPhoto").style.height="100vh";
 })
 
