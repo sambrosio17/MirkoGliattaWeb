@@ -432,4 +432,100 @@ body {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+
+.mainWrapper.services {
+  background: black !important;
+}
+
+.contentWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-right: 1%;
+}
+
+.contentWrapper .imgProduction, .contentWrapper .videoProduction {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contentWrapper .imgProduction span, .contentWrapper .videoProduction span {
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contentWrapper .imgProduction .imgContainer, .contentWrapper .imgProduction .videoContainer, .contentWrapper .videoProduction .imgContainer, .contentWrapper .videoProduction .videoContainer {
+  width: auto;
+  padding-top: 465px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: auto;
+  max-height: 65vh;
+}
+
+.contentWrapper .imgProduction .imgContainer::-webkit-scrollbar, .contentWrapper .imgProduction .videoContainer::-webkit-scrollbar, .contentWrapper .videoProduction .imgContainer::-webkit-scrollbar, .contentWrapper .videoProduction .videoContainer::-webkit-scrollbar {
+  width: 10px;
+  opacity: 0;
+}
+
+.contentWrapper .imgProduction .imgContainer .singleRow, .contentWrapper .imgProduction .imgContainer .singleVideo, .contentWrapper .imgProduction .videoContainer .singleRow, .contentWrapper .imgProduction .videoContainer .singleVideo, .contentWrapper .videoProduction .imgContainer .singleRow, .contentWrapper .videoProduction .imgContainer .singleVideo, .contentWrapper .videoProduction .videoContainer .singleRow, .contentWrapper .videoProduction .videoContainer .singleVideo {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contentWrapper .imgProduction .imgContainer .singleRow video, .contentWrapper .imgProduction .imgContainer .singleVideo video, .contentWrapper .imgProduction .videoContainer .singleRow video, .contentWrapper .imgProduction .videoContainer .singleVideo video, .contentWrapper .videoProduction .imgContainer .singleRow video, .contentWrapper .videoProduction .imgContainer .singleVideo video, .contentWrapper .videoProduction .videoContainer .singleRow video, .contentWrapper .videoProduction .videoContainer .singleVideo video {
+  width: 400px;
+}
+
+.contentWrapper .imgProduction .imgContainer .singleRow img, .contentWrapper .imgProduction .imgContainer .singleVideo img, .contentWrapper .imgProduction .videoContainer .singleRow img, .contentWrapper .imgProduction .videoContainer .singleVideo img, .contentWrapper .videoProduction .imgContainer .singleRow img, .contentWrapper .videoProduction .imgContainer .singleVideo img, .contentWrapper .videoProduction .videoContainer .singleRow img, .contentWrapper .videoProduction .videoContainer .singleVideo img {
+  margin-left: 10px;
+  width: 175px;
+  height: 175px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.videoContainer {
+  padding-top: 0px !important;
+}
 /*# sourceMappingURL=style.css.map */
